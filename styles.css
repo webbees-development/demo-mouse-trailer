@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+    height: 100vh;
+    margin: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    gap: clamp(10px, 4vw, 100px);
+    padding: clamp(10px, 4vw, 100px);
+
+    background-color: rgb(20, 20, 20);
+}
+
+#trailer {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 20px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
+
+body:hover #trailer {
+    opacity: 1;
+}
+
+.interactable {
+    width: 300px;
+    aspect-ratio: 1 / 2;
+
+    background-size: cover;
+
+    transition: all 200ms ease;
+}
+
+.interactable:hover {
+    transform: scale(105%);
+    opacity: 0.8;
+}
